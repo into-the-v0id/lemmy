@@ -14,7 +14,9 @@
     host: postgres
   }
 
-  hostname: "localhost"
+  hostname: "localhost:1236"
+  tls_enabled: false
+
   bind: "0.0.0.0"
   port: 8536
 
