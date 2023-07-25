@@ -14,6 +14,8 @@ COPY . .
     
 # Debug mode build
 RUN --mount=type=cache,target=/app/target \
+    --mount=type=cache,target=/root/.cargo/registry \
+    --mount=type=cache,target=/root/.cargo/git \
     if [ "$RUST_RELEASE_MODE" = "debug" ] ; then \
       echo "pub const VERSION: &str = \"$(git describe --tag)\";" > "crates/utils/src/version.rs" \
       && cargo build --target ${CARGO_BUILD_TARGET} --features ${CARGO_BUILD_FEATURES} \
