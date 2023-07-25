@@ -129,3 +129,11 @@ services:
       - ./volumes/postgres:/var/lib/postgresql/data:Z
     restart: always
     logging: *default-logging
+
+  mailpit:
+    image: axllent/mailpit
+    hostname: mailpit
+    ports:
+      - "8025:8025"
+    restart: always
+    logging: *default-logging

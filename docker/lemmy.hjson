@@ -23,5 +23,10 @@
     # api_key: "API_KEY"
   }
 
+  email: {
+    smtp_server: "mailpit:1025"
+    tls_type: "none"
+  }
+
   #opentelemetry_url: "http://otel:4137"
 }
